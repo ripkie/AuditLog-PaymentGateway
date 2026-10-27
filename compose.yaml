@@ -1,0 +1,32 @@
+name: telco-health-task12
+
+services:
+  transaction-service:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      PAYMENT_GATEWAY_URL: http://mock-gateway:8000
+      PAYMENT_API_KEY_FILE: /run/secrets/payment_api_key
+    secrets:
+      - payment_api_key
+
+  mock-gateway:
+    build: .
+    command:
+      - uvicorn
+      - mock_gateway.main:app
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8000"
+    ports:
+      - "127.0.0.1:8001:8000"
+    environment:
+      PAYMENT_API_KEY_FILE: /run/secrets/payment_api_key
+    secrets:
+      - payment_api_key
+
+secrets:
+  payment_api_key:
+    file: ./secrets/payment_api_key.txt

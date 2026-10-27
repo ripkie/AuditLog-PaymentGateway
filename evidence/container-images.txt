@@ -1,0 +1,3 @@
+﻿CONTAINER                                   REPOSITORY                                TAG                 PLATFORM            IMAGE ID            SIZE                CREATED
+telco-health-task12-mock-gateway-1          telco-health-task12-mock-gateway          latest              linux/amd64         9d116362fc8c        229MB               34 seconds ago
+telco-health-task12-transaction-service-1   telco-health-task12-transaction-service   latest              linux/amd64         3c5c73a2c892        229MB               34 seconds ago

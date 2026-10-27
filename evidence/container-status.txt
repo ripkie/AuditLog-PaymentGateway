@@ -1,0 +1,3 @@
+﻿NAME                                        IMAGE                                     COMMAND                  SERVICE               CREATED          STATUS          PORTS
+telco-health-task12-mock-gateway-1          telco-health-task12-mock-gateway          "uvicorn mock_gatewaΓÇª"   mock-gateway          33 seconds ago   Up 32 seconds   127.0.0.1:8001->8000/tcp
+telco-health-task12-transaction-service-1   telco-health-task12-transaction-service   "uvicorn app.main:apΓÇª"   transaction-service   33 seconds ago   Up 31 seconds   127.0.0.1:8000->8000/tcp
